@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+
+task makeJar(type: Copy) {
+    delete 'build/outputs/libs/nian-wan-1.2.2.jar'
+    from('build/intermediates/packaged-classes/release/')
+    into('build/outputs/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'nian-wan-1.2.2.jar')
+}
+makeJar.dependsOn(build)
+
+
+dependencies {
+    implementation files('libs/alipaySdk-20180601.jar')
+    implementation files('libs/android-support-v4.jar')
+    implementation files('libs/gson-2.8.5.jar')
+    implementation files('libs/okhttp-3.6.0.jar')
+    implementation files('libs/okio-1.10.0.jar')
+    implementation files('libs/wechat-sdk-5.1.4.jar')
+    implementation files('libs/xutillibrary.jar')
+}

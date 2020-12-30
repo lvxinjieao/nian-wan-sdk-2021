@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/green_deep" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/user_info"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/title_bar"
+        android:background="@color/white" >
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/sdk_user_icon" />
+
+        <TextView
+            android:id="@+id/coin_bind_balance_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_user"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/iv_user"
+            android:text="绑定币余额 : "
+            android:textColor="@color/gray_deep" />
+
+        <TextView
+            android:id="@+id/coin_bind_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/coin_bind_balance_desc"
+            android:layout_alignBottom="@+id/coin_bind_balance_desc"
+            android:layout_toRightOf="@+id/coin_bind_balance_desc"
+            android:textColor="@color/gray_deep" />
+
+        <TextView
+            android:id="@+id/coin_balance_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/coin_bind_balance_desc"
+            android:layout_below="@+id/coin_bind_balance"
+            android:layout_marginTop="5dp"
+            android:text="平台币余额 : "
+            android:textColor="@color/gray_deep" />
+
+        <TextView
+            android:id="@+id/coin_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/coin_balance_desc"
+            android:layout_alignBottom="@+id/coin_balance_desc"
+            android:layout_toRightOf="@+id/coin_balance_desc"
+            android:textColor="@color/gray_deep" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_info"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:paddingBottom="5dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="5dp"
+        android:scrollbars="none"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
+    <com.mini.sdk.view.LoncentViewPager
+        android:id="@+id/fragment_pages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/gray_light" />
+
+</RelativeLayout>

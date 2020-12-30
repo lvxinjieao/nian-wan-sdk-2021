@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sdk_background"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="账号注册"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical" >
+
+            <com.mini.sdk.view.DrawableCenterTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/sdk_harf_round_left"
+                android:drawableTop="@drawable/sdk_icon_user"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/user_register_account"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sdk_input"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:enabled="true"
+                android:gravity="center_vertical"
+                android:hint="账号（6-15位数字或英文字母）"
+                android:inputType="" android:maxLength="15"
+                android:paddingLeft="40dp"
+                android:singleLine="true"
+                android:textColor="#FF9D9D9E"
+                android:textColorHint="#9C9C9C"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical" >
+
+            <com.mini.sdk.view.DrawableCenterTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/sdk_harf_round_left"
+                android:drawableTop="@drawable/sdk_icon_password"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/user_register_password1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/sdk_input"
+                android:enabled="true"
+                android:gravity="center_vertical"
+                android:hint="密码（6-15位数字或英文字母）"
+                android:inputType="" android:maxLength="15"
+                android:paddingLeft="40dp"
+                android:singleLine="true"
+                android:textColor="#FF9D9D9E"
+                android:textColorHint="#9C9C9C"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_user_register_account_pwd_eye"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp" >
+
+                <ImageView
+                    android:id="@+id/iv_user_register_account_pwd_eye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/sdk_eye_close" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical" >
+
+            <com.mini.sdk.view.DrawableCenterTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/sdk_harf_round_left"
+                android:drawableTop="@drawable/sdk_icon_password"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/user_register_password2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sdk_input"
+                android:enabled="true"
+                android:gravity="center_vertical"
+                android:hint="请再次输入密码"
+                android:inputType="" android:maxLength="15"
+                android:paddingLeft="40dp"
+                android:singleLine="true"
+                android:textColor="#FF9D9D9E"
+                android:textColorHint="#9C9C9C"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_user_register_account_repwd_eye"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp" >
+
+                <ImageView
+                    android:id="@+id/iv_user_register_account_repwd_eye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/sdk_eye_close" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical" >
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btn_read"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/circle_select" />
+
+            <TextView
+                android:id="@+id/txt_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_read"
+                android:text="《用户注册协议》"
+                android:textColor="@color/green_deep"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn_read"
+                android:text="我已阅读并同意"
+                android:textColor="#FF9D9D9E"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/user_register"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/sdk_green_button"
+            android:text="完成注册"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/user_register_back"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sdk_circle_clear" />
+
+</RelativeLayout>

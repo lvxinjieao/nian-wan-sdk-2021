@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+
+    <color name="harf_transparent">#50000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <!-- 灰 -->
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray">#A9A9A9</color>
+    <color name="gray_deep">#7a7a7a</color>
+    <!-- 绿 -->
+    <color name="green_light">#CCFFCC</color>
+    <color name="green">#228B22</color>
+    <color name="green_deep">#99CC33</color>
+
+    <!-- 浅蓝色 -->
+    <color name="blue_light">#00B2EE</color>
+
+    <color name="red">#f3384a</color>
+
+    <color name="orange">#EF8201</color>
+</resources>
