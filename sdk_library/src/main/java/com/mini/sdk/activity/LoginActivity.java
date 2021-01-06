@@ -129,10 +129,11 @@ public class LoginActivity extends Activity {
 
 /////////////////////////////////////////////////////////////////////
                 case Constant.REGISTER_SUCCESS:// 注册成功
-                    if (PluginApi.registerListener != null)
-                        PluginApi.registerListener.result(RegisterListener.SDK_REGISTER_SUCCESS, "REGISTER SUCCESS");
-
                     UserRegister registerSuccess = (UserRegister) msg.obj;
+
+                    if (PluginApi.registerListener != null)
+                        PluginApi.registerListener.result(RegisterListener.SDK_REGISTER_SUCCESS, registerSuccess.getAccountId());
+
                     register_login(registerSuccess);
                     break;
 

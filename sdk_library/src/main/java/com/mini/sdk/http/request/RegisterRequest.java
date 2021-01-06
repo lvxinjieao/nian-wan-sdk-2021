@@ -52,24 +52,28 @@ public class RegisterRequest {
 				registerSuccess.setUserName(username);
 				registerSuccess.setPassword(password);
 
-				String res = "注册失败";
-				int status;
+				String return_msg = "注册失败";	//描述信息
+				int status = 0;						//状态码
+				String return_code = "";				//返回用户id
 				JSONObject json = null;
 
 				try {
 					json = new JSONObject(result);
 					status = json.optInt("status");
-					res = json.optString("return_msg");
+					return_code = json.getString("return_code");
+					return_msg = json.optString("return_msg");
 					registerSuccess.setCode(1);
 				} catch (JSONException e) {
-					res = "数据解析异常";
+					return_msg = "数据解析异常";
 					status = 0;
 				} catch (Exception e) {
-					res = "数据解析异常";
+					return_msg = "数据解析异常";
 					status = 0;
 				}
 
 				if (status == 200 || status == 1) {
+					registerSuccess.setMessage(return_msg);
+					registerSuccess.setAccountId(return_code);
 					noticeResult(Constant.REGISTER_SUCCESS, registerSuccess);
 				} else {
 					String message;

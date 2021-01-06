@@ -245,7 +245,6 @@ public class PluginApi {
      */
     public void login(LoginListener loginListener_) {
 
-
         if (null == activity) {
             Logs.e("start login context is null");
             return;

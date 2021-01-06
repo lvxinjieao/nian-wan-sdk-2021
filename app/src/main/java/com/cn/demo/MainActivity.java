@@ -15,6 +15,7 @@ import com.mini.sdk.listener.LoginResult;
 import com.mini.sdk.listener.LogoutListener;
 import com.mini.sdk.listener.OrderInfo;
 import com.mini.sdk.listener.PayListener;
+import com.mini.sdk.listener.RegisterListener;
 import com.mini.sdk.listener.UpdateRoleListener;
 
 public class MainActivity extends Activity {
@@ -40,7 +41,16 @@ public class MainActivity extends Activity {
                     Log.i("sdk_1.2.2", "初始化失败");
                 }
             }
-        },new LogoutListener() {
+        }, new RegisterListener() {
+            @Override
+            public void result(int code, String message) {
+                if (code == RegisterListener.SDK_REGISTER_SUCCESS) {
+                    Log.i("sdk_1.2.2", "注册成功 :"+message);
+                } else {
+                    Log.i("sdk_1.2.2", "注册失败");
+                }
+            }
+        }, new LogoutListener() {
 
             @Override
             public void result(int code, String message) {
@@ -60,7 +70,7 @@ public class MainActivity extends Activity {
                     Log.i("sdk_1.2.2", "退出失败");
                 }
             }
-        },true);
+        }, true);
 
         initView();
     }
